@@ -56,6 +56,8 @@ class ProductServiceApplicationTests {
                 .andExpect(status().isCreated());
 
         Assertions.assertEquals(1, productRepository.findAll().size());
+
+        productRepository.deleteAll();
     }
 
     @Test
@@ -93,6 +95,8 @@ class ProductServiceApplicationTests {
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(jsonPath("$.length()").value(initialProducts.size()));
+
+        productRepository.deleteAll();
     }
 
     private ProductRequest getProductRequest() {
