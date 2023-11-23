@@ -21,6 +21,7 @@
     <module>inventory-service</module>
     <module>discovery-server</module>
     <module>api-gateway</module>
+    <module>notification-service</module>
   </modules>
 
   <properties>
@@ -29,6 +30,7 @@
     <micrometer-tracing-bridge-brave.version>1.2.0</micrometer-tracing-bridge-brave.version>
     <zipkin-reporter-brave.version>2.16.4</zipkin-reporter-brave.version>
     <spring-boot-starter-actuator.version>3.1.5</spring-boot-starter-actuator.version>
+    <spring-kafka.version>3.1.0</spring-kafka.version>
   </properties>
   <dependencyManagement>
     <dependencies>
@@ -71,6 +73,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
         <version>${spring-boot-starter-actuator.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.kafka</groupId>
+        <artifactId>spring-kafka</artifactId>
+        <version>${spring-kafka.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
