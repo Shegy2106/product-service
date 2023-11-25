@@ -42,5 +42,6 @@ build/
 /mysql_keycloak_data/
 /mongo-data/
 /postgres-inventory/
+/mysql-inventory/
 /postgres-order/
 /realms/
