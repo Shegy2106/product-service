@@ -29,8 +29,10 @@
     <micrometer-observation.version>1.12.0</micrometer-observation.version>
     <micrometer-tracing-bridge-brave.version>1.2.0</micrometer-tracing-bridge-brave.version>
     <zipkin-reporter-brave.version>2.16.4</zipkin-reporter-brave.version>
-    <spring-boot-starter-actuator.version>3.1.5</spring-boot-starter-actuator.version>
     <spring-kafka.version>3.1.0</spring-kafka.version>
+    <micrometer-registry-prometheus.version>1.12.0</micrometer-registry-prometheus.version>
+    <spring-boot-starter-actuator.version>3.2.0</spring-boot-starter-actuator.version>
+    <spring-boot-start-test.version>3.2.0</spring-boot-start-test.version>
   </properties>
 
   <dependencyManagement>
@@ -71,6 +73,13 @@
         <scope>import</scope>
       </dependency>
       <dependency>
+        <groupId>org.springframework.kafka</groupId>
+        <artifactId>spring-kafka</artifactId>
+        <version>${spring-kafka.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-actuator</artifactId>
         <version>${spring-boot-starter-actuator.version}</version>
@@ -78,11 +87,18 @@
         <scope>import</scope>
       </dependency>
       <dependency>
-        <groupId>org.springframework.kafka</groupId>
-        <artifactId>spring-kafka</artifactId>
-        <version>${spring-kafka.version}</version>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-registry-prometheus</artifactId>
+        <version>${micrometer-registry-prometheus.version}</version>
         <type>pom</type>
         <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <version>${spring-boot-starter-test.version}</version>
+        <type>pom</type>
+        <scope>test</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

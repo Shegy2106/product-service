@@ -45,3 +45,4 @@ build/
 /mysql-inventory/
 /postgres-order/
 /realms/
+/grafana/
